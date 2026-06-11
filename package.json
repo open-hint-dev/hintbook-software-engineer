@@ -1,0 +1,39 @@
+{
+    "name": "@openhint/hintbook-software-engineer",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "The official software engineering hintbook for HINT — the keyword vocabulary that turns .hint specifications into binding implementation prompts, with implement, fix, and review modes.",
+    "keywords": [
+        "openhint",
+        "hintbook",
+        "software-engineering"
+    ],
+    "author": "Andrei Neprel <andrei@neprel.ai> (https://neprel.ai/)",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/open-hint-dev/hintbook-software-engineer.git",
+        "directory": "."
+    },
+    "homepage": "https://github.com/open-hint-dev/hintbook-software-engineer#readme",
+    "bugs": {
+        "url": "https://github.com/open-hint-dev/hintbook-software-engineer/issues"
+    },
+    "engines": {
+        "node": ">=24"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "main": "./index.js",
+    "exports": {
+        "./package.json": "./package.json",
+        ".": {
+            "import": "./index.js"
+        }
+    },
+    "files": [
+        "*"
+    ],
+    "dependencies": {}
+}

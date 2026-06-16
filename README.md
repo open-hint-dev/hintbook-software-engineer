@@ -25,6 +25,7 @@ Write any of these as a markdown heading — `# keyword Name {#optional_id}` —
 
 | Area            | Keywords                                                                   |
 | --------------- | -------------------------------------------------------------------------- |
+| Intent & scope  | `goal`, `done`, `scope`                                                    |
 | Project context | `app`, `lang`, `build`, `dep`, `module`, `lib`, `namespace`, `res`, `read` |
 | Data            | `entity`, `field`, `table`, `column`, `row`                                |
 | Behavior        | `func`, `arg`, `result`, `flow`, `action`, `error`                         |
@@ -32,7 +33,7 @@ Write any of these as a markdown heading — `# keyword Name {#optional_id}` —
 | User interface  | `ui`, `form`, `block`, `image`                                             |
 | Spec-internal   | `notes` (excluded from compiled output)                                    |
 
-Common long forms work as synonyms: `application` → `app`, `function` → `func`, `dependencies` → `dep`, `language` → `lang`, `library` → `lib`, `argument` → `arg`, `return` → `result`, and more.
+Common long forms work as synonyms: `application` → `app`, `function` → `func`, `dependencies` → `dep`, `language` → `lang`, `library` → `lib`, `argument` → `arg`, `return` → `result`, `intent` → `goal`, `acceptance` → `done`, `outofscope` → `scope`, and more.
 
 See the full reference with rendered tags and usage guidance in [docs/keywords.md](docs/keywords.md).
 

@@ -6,6 +6,16 @@ All templates render the block's name and id as attributes and place the body be
 
 ---
 
+## Intent and scope
+
+These declare *why* the work exists, *when* it is done, and *where* its edges are. They carry no implementation themselves — they steer every decision the other blocks leave open. Lead a spec with them.
+
+| Keyword | Synonyms | Compiles to | Use it for |
+| --- | --- | --- | --- |
+| `goal` | `why`, `intent` | `<product_goal_and_intent>` | Why the work exists and the outcome it must produce. The tie-breaker for every decision the spec is silent on — the agent chooses what serves the goal. |
+| `done` | `accept`, `acceptance`, `criteria` | `<acceptance_criteria>` | The observable, verifiable conditions for "done." The work is incomplete until every one is demonstrably met — proven, not asserted. |
+| `scope` | `nongoal`, `nongoals`, `outofscope` | `<scope_boundary>` | What is in scope and what is explicitly out of it. The agent builds nothing outside the boundary and reports rather than silently expanding it. |
+
 ## Project context
 
 | Keyword | Synonyms | Compiles to | Use it for |
@@ -70,6 +80,7 @@ All templates render the block's name and id as attributes and place the body be
 
 ## Choosing keywords
 
+- **Lead with intent.** A `goal` and a `scope` at the top of a spec resolve the decisions every other block leaves open and stop the agent from building past the edges. A `done` block turns "looks finished" into "passes these checks."
 - **Reach for the most specific keyword.** `field` inside an `entity` beats a bullet list in the entity body — the agent gets a named, binding block it cannot gloss over.
 - **Give ids to anything referenced elsewhere.** `# entity PaymentData {#payment_data}` keeps a stable handle through renames.
 - **State prohibitions with `bad`, not prose.** Its template adds the strongest enforcement language in the book.

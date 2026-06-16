@@ -7,4 +7,4 @@ Before you consider the fix done, verify all of the following:
 3. Nothing outside the scope of the fix changed; the diff contains no drive-by edits.
 4. Existing tests still pass, and the defect is covered by a test that fails without the fix and passes with it. If you cannot run the tests, say so explicitly.
 
-Then report: the root cause, the specification block that was violated, the exact change you made, and how you verified it.
+Then report: the root cause, the specification block that was violated, the exact change you made, and how you verified it. Close with a status — exactly one of `DONE`, `DONE_WITH_CONCERNS` (list each concern), `BLOCKED` (state the blocker and what you tried), or `NEEDS_CONTEXT` (the defect is in the spec, not the code — state what decision the author must make).

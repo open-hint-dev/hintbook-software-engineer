@@ -1,3 +1,5 @@
 ---
 exclude: true
+synonyms:
+    - note
 ---

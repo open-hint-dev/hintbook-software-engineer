@@ -34,6 +34,7 @@ These declare *why* the work exists, *when* it is done, and *where* its edges ar
 
 | Keyword | Synonyms | Compiles to | Use it for |
 | --- | --- | --- | --- |
+| `data` | `const`, `constant`, `value`, `var`, `variable` | `<data_definition>` | A meaningful concrete value — a named constant, magic value, enum member, or config default. Used exactly as given, and referenced rather than duplicated as a literal. |
 | `entity` | | `<data_structure>` | A data model with an exact schema. No renamed fields, changed types, extra or missing fields. |
 | `field` | | `<field>` | One named property of an entity or form: type, optionality, validation. Implement exactly as declared. |
 | `table` | | `<table>` | A tabular structure or UI table: columns, row shape, persistence/display behavior. |

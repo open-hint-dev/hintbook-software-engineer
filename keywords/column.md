@@ -1,4 +1,5 @@
 ---
+surface: true
 description: |
     One column of a table: name, data type, display label, and constraints
     (nullable, unique, default). Nest under a `table`. Implement exactly — no

@@ -1,4 +1,5 @@
 ---
+surface: true
 description: |
     A data model with an exact schema — no renamed fields, changed types, or
     extra/missing fields. The authoritative blueprint for the structure across

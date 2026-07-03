@@ -1,4 +1,5 @@
 ---
+surface: true
 description: |
     A meaningful concrete value — a named constant, magic value, enum member, or
     config default. Used exactly as given, and referenced rather than duplicated

@@ -1,4 +1,5 @@
 ---
+surface: true
 description: |
     One named property of an entity or form: its type, optionality, and
     validation rules. Implement exactly — no rename, no type change, no

@@ -79,6 +79,16 @@ These declare *why* the work exists, *when* it is done, and *where* its edges ar
 
 ---
 
+## Verifiable surfaces
+
+Six keywords are marked **surfaces** (`surface: true` in their instruction front matter): `func`, `entity`, `field`, `error`, `data`, and `column`. A surface is a declaration whose *name* must appear verbatim in the generated code — exactly the keywords whose contract forbids renaming or substitution.
+
+`hint verify <path>` uses this. It reads the generated file and checks, deterministically and without spending a token, that every declared surface name is present. A missing name means a whole declaration was dropped — a stubbed or forgotten function, an unhandled error type, an omitted field, an unused constant. This is a *presence* check, not a proof of correctness — that is what the semantic `hint --mode review` audit is for — and the two are complementary. Run `hint lock --strict` to refuse recording a target as generated until it verifies.
+
+Keywords whose name is not a verbatim code identifier are deliberately **not** surfaces — a `ui` titled "Invoice page", an `arg` that idiomatic code destructures away, a prose `table` name — so that a verify failure stays a reliable signal of a real omission rather than noise.
+
+---
+
 ## Choosing keywords
 
 - **Lead with intent.** A `goal` and a `scope` at the top of a spec resolve the decisions every other block leaves open and stop the agent from building past the edges. A `done` block turns "looks finished" into "passes these checks."

@@ -1,4 +1,5 @@
 ---
+surface: true
 description: |
     A binding function contract. Every argument, the return, each error, and the
     logic flow are mandatory — nest `arg`, `result`, `flow`, and `error` blocks

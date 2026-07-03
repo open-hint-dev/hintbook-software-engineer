@@ -1,4 +1,5 @@
 ---
+surface: true
 description: |
     Exact error types thrown under exact conditions — never substituted, wrapped,
     or renamed. Each one must be backed by a regression test that fails without

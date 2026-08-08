@@ -57,6 +57,8 @@ These declare *why* the work exists, *when* it is done, and *where* its edges ar
 | Keyword | Synonyms | Compiles to | Use it for |
 | --- | --- | --- | --- |
 | `rule` | `rules` | `<critical_system_mandates>` | Non-negotiable system-level constraints every function, data access, and error path must satisfy. |
+| `decision` | `adr` | `<architectural_decision>` | A settled design decision **and its rationale** — so future work extends it instead of relitigating or silently contradicting it. |
+| `invariant` | | `<system_invariant>` | A property that must hold before and after every change. A change that would falsify it is wrong, not the invariant. |
 | `good` | | `<enforced_patterns>` | Required patterns and practices, applied without exception or substitution. |
 | `bad` | | `<prohibited_anti_patterns>` | Unconditional prohibitions — real past failures the agent must never reintroduce, even if examples seem to suggest them. |
 | `test` | | `<verification_and_unit_test_criteria>` | Test scenarios that must all appear in the test output: edge cases, mock shapes, assertions. |
@@ -83,7 +85,7 @@ These declare *why* the work exists, *when* it is done, and *where* its edges ar
 
 Six keywords are marked **surfaces** (`surface: true` in their instruction front matter): `func`, `entity`, `field`, `error`, `data`, and `column`. A surface is a declaration whose *name* must appear verbatim in the generated code — exactly the keywords whose contract forbids renaming or substitution.
 
-`hint verify <path>` uses this. It reads the generated file and checks, deterministically and without spending a token, that every declared surface name is present. A missing name means a whole declaration was dropped — a stubbed or forgotten function, an unhandled error type, an omitted field, an unused constant. This is a *presence* check, not a proof of correctness — that is what the semantic `hint --mode review` audit is for — and the two are complementary. Run `hint lock --strict` to refuse recording a target as generated until it verifies.
+`hint verify <path>` uses this. It reads the generated file and checks, deterministically and without spending a token, that every declared surface name is present. A missing name means a whole declaration was dropped — a stubbed or forgotten function, an unhandled error type, an omitted field, an unused constant. This is a *presence* check, not a proof of correctness. Compose it as `hint verify <path> && hint lock <path>` to refuse recording a target as generated until it verifies.
 
 Keywords whose name is not a verbatim code identifier are deliberately **not** surfaces — a `ui` titled "Invoice page", an `arg` that idiomatic code destructures away, a prose `table` name — so that a verify failure stays a reliable signal of a real omission rather than noise.
 
@@ -95,4 +97,5 @@ Keywords whose name is not a verbatim code identifier are deliberately **not** s
 - **Reach for the most specific keyword.** `field` inside an `entity` beats a bullet list in the entity body — the agent gets a named, binding block it cannot gloss over.
 - **Give ids to anything referenced elsewhere.** `# entity PaymentData {#payment_data}` keeps a stable handle through renames.
 - **State prohibitions with `bad`, not prose.** Its template adds the strongest enforcement language in the book.
+- **Record *why*, not just *what*.** A `decision` without its rationale is a rule someone will overturn the first time it is inconvenient; with the rationale it tells a reader whether a new situation is still covered. Use `invariant` for what must always hold, `rule` for how work must be done, and `bad` for what must never happen.
 - **Unknown keywords don't fail** — the transpiler passes their bodies through as plain markdown — but only declared keywords carry the binding tag language defined in the system glossary.

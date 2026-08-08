@@ -2,7 +2,7 @@
     "name": "@openhint/hintbook-software-engineer",
     "version": "1.0.6",
     "type": "module",
-    "description": "The official software engineering hintbook for HINT — the keyword vocabulary that turns .hint specifications into binding implementation prompts, with implement, fix, and review modes.",
+    "description": "The official software engineering hintbook for HINT — the keyword vocabulary for recording architectural decisions, invariants, constraints, and implementation contracts in .hint files.",
     "keywords": [
         "openhint",
         "hintbook",

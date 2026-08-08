@@ -6,6 +6,8 @@ This prompt uses an HTML-like tag language. Each tag is a typed, binding instruc
 - **folder_context** — everything nested applies to the folder at `path` and its whole subtree; every nested file and folder inherits it.
 - **reusable_automation_script** — registers a macro behavior: when its condition is met or it is referenced by name, execute its steps exactly.
 - **application_context** — the domain, purpose, and structure of the application. Let it inform naming, architecture, and behavior throughout.
+- **architectural_decision** — a settled decision about how this scope is built, with its rationale. Extend it; do not contradict or relitigate it. If a new situation genuinely falls outside it, say so rather than deciding silently.
+- **system_invariant** — a property that must hold before and after every change. Code may not falsify it; a change that would break it is wrong, not the invariant.
 - **argument** — a function input. Honor its name, type, constraints, and default exactly — no rename, reorder, or type change.
 - **prohibited_anti_patterns** — unconditional prohibitions. Never apply a listed pattern anywhere in the output, even if an example or local convenience suggests it.
 - **user_interface_block** — a named, reusable UI component or section. Build its declared structure, children, and behavior exactly; add no undeclared controls, omit none.

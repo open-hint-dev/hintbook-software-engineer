@@ -1,8 +1,8 @@
 ---
 description: |
-    Injected automatically in fix mode when a hint.lock exists: the block-level drift
-    report listing which specification blocks changed since the code was last generated.
-    You never write this block yourself — the compiler renders it from the lock.
+    Injected automatically by `hint --prompt` when a hint.lock exists and blocks have
+    drifted since the code was last generated. You never write this block yourself —
+    the CLI renders it from the lock, and it appears only when something actually drifted.
 ---
 
 <specification_drift>

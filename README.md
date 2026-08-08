@@ -29,7 +29,7 @@ Write any of these as a markdown heading — `# keyword Name {#optional_id}` —
 | Project context | `app`, `lang`, `build`, `dep`, `module`, `lib`, `namespace`, `res`, `read` |
 | Data            | `data`, `entity`, `field`, `table`, `column`, `row`                        |
 | Behavior        | `func`, `arg`, `result`, `flow`, `action`, `error`                         |
-| Constraints     | `rule`, `good`, `bad`, `test`, `example`                                   |
+| Constraints     | `rule`, `decision`, `invariant`, `good`, `bad`, `test`, `example`          |
 | User interface  | `ui`, `form`, `block`, `image`                                             |
 | Spec-internal   | `notes` (excluded from compiled output)                                    |
 
@@ -37,15 +37,17 @@ Common long forms work as synonyms: `application` → `app`, `function` → `fun
 
 See the full reference with rendered tags and usage guidance in [docs/keywords.md](docs/keywords.md).
 
-## Modes
+## Output
 
-| Mode                | Invocation                   | The agent's role                                                                                                                     |
-| ------------------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `compile` (default) | `hint <paths>`               | Senior engineer **implementing** the specification exactly — no invented features, no placeholders, completion checklist at the end. |
-| `fix`               | `hint --mode fix <paths>`    | Senior engineer **repairing** code that violates the spec: root cause first, smallest conforming change, regression test required.   |
-| `review`            | `hint --mode review <paths>` | Senior engineer **auditing** an implementation against the spec: findings with severity and file references, no code changes.        |
+| Invocation                  | What you get                                                                                                                  |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `hint <paths>`              | The knowledge that applies, rendered through this book's tags. No persona, no footer — what an agent already mid-session needs. |
+| `hint --prompt <paths>`     | The same knowledge wrapped in the role header and verification/report footer, for an agent starting cold.                       |
+| `hint --standalone <paths>` | Implies `--prompt`, and prepends the tag glossary for an agent that never loaded `AGENTS.md`.                                   |
 
-Details in [docs/modes.md](docs/modes.md).
+When a `hint.lock` exists and blocks have drifted, `--prompt` output additionally carries the drift list and scopes the work to it — automatically, with no mode to select. Details in [docs/framing.md](docs/framing.md).
+
+> Requires `@openhint/cli` 1.1+. This book no longer ships `--mode fix` / `--mode review`; see the [migration guide](https://github.com/open-hint-dev/hint/blob/main/docs/07-migration.md).
 
 ## Example
 

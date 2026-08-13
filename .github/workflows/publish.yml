@@ -1,0 +1,73 @@
+# Authentication is npm trusted publishing: the `id-token: write` permission below lets
+# npm exchange this workflow's OIDC identity for a short-lived publish token, so no npm
+# secret is stored in the repository. Configure it once on npmjs.com, under the package's
+# Settings -> Trusted Publisher, pointing at this repository and `publish.yml`.
+#
+# `NODE_AUTH_TOKEN` below stays as a fallback: if an `NPM_TOKEN` secret exists it is used
+# when OIDC is unavailable, and if it does not exist the variable is simply empty.
+
+name: Publish
+
+on:
+    push:
+        tags: ['v*']
+
+concurrency:
+    group: publish-${{ github.ref }}
+    cancel-in-progress: false
+
+permissions:
+    contents: write
+    id-token: write
+
+jobs:
+    publish:
+        name: Publish to npm
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v5
+
+            - uses: actions/setup-node@v5
+              with:
+                  node-version: 24
+                  registry-url: https://registry.npmjs.org
+
+            # package.json stays the single source of truth for the version, so the tag has
+            # to agree with it. Bump the version in a commit first, then tag that commit.
+            - name: Check the tag matches the version
+              id: version
+              env:
+                  REF_NAME: ${{ github.ref_name }}
+              run: |
+                  tagged="${REF_NAME#v}"
+                  declared=$(node -p "require('./package.json').version")
+
+                  if [ "$tagged" != "$declared" ]; then
+                      echo "::error::tag $REF_NAME does not match the version in package.json ($declared)"
+                      exit 1
+                  fi
+
+                  echo "version=$declared" >> "$GITHUB_OUTPUT"
+
+                  case "$declared" in
+                      *-*) echo "tag=next" >> "$GITHUB_OUTPUT" ;;
+                      *) echo "tag=latest" >> "$GITHUB_OUTPUT" ;;
+                  esac
+
+            - name: Check the hintbook manifest parses
+              run: node -e "JSON.parse(require('fs').readFileSync('keywords/hintbook.json', 'utf8'))"
+
+            - name: Publish
+              run: make publish
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+                  NPM_CONFIG_PROVENANCE: true
+                  NPM_CONFIG_TAG: ${{ steps.version.outputs.tag }}
+
+            - name: Create the GitHub release
+              env:
+                  GH_TOKEN: ${{ github.token }}
+                  REF_NAME: ${{ github.ref_name }}
+                  PRERELEASE: ${{ steps.version.outputs.tag == 'next' && '--prerelease' || '' }}
+              run: gh release create "$REF_NAME" --verify-tag --generate-notes $PRERELEASE

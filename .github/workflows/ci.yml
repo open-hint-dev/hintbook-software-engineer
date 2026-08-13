@@ -1,0 +1,53 @@
+name: CI
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+concurrency:
+    group: ci-${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+permissions:
+    contents: read
+
+jobs:
+    package:
+        name: Check the package
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v5
+
+            - uses: actions/setup-node@v5
+              with:
+                  node-version: 24
+
+            - name: Check the hintbook manifest parses
+              run: node -e "JSON.parse(require('fs').readFileSync('keywords/hintbook.json', 'utf8'))"
+
+            - name: Pack the hintbook
+              run: npm pack --dry-run
+
+            # A hintbook is only useful if the whole vocabulary reaches the consumer, and an
+            # `.npmrc` must never reach it, so assert the tarball contents rather than trust
+            # the `files` field and `.npmignore` to keep agreeing with each other.
+            - name: Check the tarball carries the whole book
+              run: |
+                  packed=$(npm pack --dry-run --json | node -pe "JSON.parse(require('fs').readFileSync(0, 'utf8'))[0].files.map((file) => file.path).join('\n')")
+
+                  if printf '%s\n' "$packed" | grep -qxF .npmrc; then
+                      echo "::error::.npmrc is in the tarball — it may carry a publish token"
+                      exit 1
+                  fi
+
+                  for file in package.json index.js keywords/*; do
+                      if ! printf '%s\n' "$packed" | grep -qxF "$file"; then
+                          echo "::error::$file is missing from the tarball"
+                          exit 1
+                      fi
+                  done
+
+                  echo "Packed $(printf '%s\n' "$packed" | wc -l) files, including all $(ls keywords | wc -l) keyword files."

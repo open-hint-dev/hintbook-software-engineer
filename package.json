@@ -1,6 +1,6 @@
 {
     "name": "@openhint/hintbook-software-engineer",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "type": "module",
     "description": "The official software engineering hintbook for HINT — the keyword vocabulary for recording architectural decisions, invariants, constraints, and implementation contracts in .hint files.",
     "keywords": [
@@ -33,7 +33,11 @@
         }
     },
     "files": [
-        "*"
+        "LICENSE",
+        "README.md",
+        "docs",
+        "index.js",
+        "keywords"
     ],
     "dependencies": {}
 }

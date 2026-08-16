@@ -8,5 +8,16 @@
         "*.cts"
     ],
     "comment": "// {text}",
-    "symbols": "npx --yes @openhint/adapter-typescript {file}"
+    "symbols": "npx --yes @openhint/adapter-typescript {file}",
+    "extract": {
+        "function": "func",
+        "interface": "entity",
+        "type": "entity",
+        "class": "entity",
+        "enum": "entity",
+        "const": "data",
+        "param": "arg",
+        "field": "field",
+        "result": "result"
+    }
 }

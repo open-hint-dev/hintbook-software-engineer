@@ -1,6 +1,17 @@
 {
     "id": "emit-se-go",
     "target": "go",
-    "match": ["*.go"],
-    "comment": "// {text}"
+    "match": [
+        "*.go"
+    ],
+    "comment": "// {text}",
+    "extract": {
+        "function": "func",
+        "struct": "entity",
+        "interface": "entity",
+        "const": "data",
+        "param": "arg",
+        "field": "field",
+        "result": "result"
+    }
 }

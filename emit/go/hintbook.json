@@ -13,5 +13,32 @@
         "param": "arg",
         "field": "field",
         "result": "result"
-    }
+    },
+    "builtins": [
+        "string",
+        "int",
+        "int8",
+        "int16",
+        "int32",
+        "int64",
+        "uint",
+        "uint8",
+        "uint16",
+        "uint32",
+        "uint64",
+        "float32",
+        "float64",
+        "complex64",
+        "complex128",
+        "bool",
+        "byte",
+        "rune",
+        "error",
+        "any",
+        "interface",
+        "struct",
+        "map",
+        "chan",
+        "nil"
+    ]
 }

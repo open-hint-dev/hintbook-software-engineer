@@ -10,6 +10,12 @@ import * as Path from 'node:path';
 // Every placeholder the engine resolves, and whether it takes a `:argument`. A token the engine does
 // not recognize is emitted verbatim, so `{childs:arg}` would put a literal `{childs:arg}` into
 // somebody's source file rather than failing.
+// Running templates are structural slots, not keywords: they are rendered once per artifact rather
+// than per block, so they have no `keywords/<name>.md` and their own placeholder set.
+const RUNNING = {
+    __imports__: { names: false },
+};
+
 const PLACEHOLDERS = {
     name: false,
     id: false,
@@ -59,12 +65,12 @@ function* placeholders(content) {
     }
 }
 
-function checkTemplate(file, content) {
+function checkTemplate(file, content, allowed) {
     for (const raw of placeholders(content)) {
         const expression = raw.replace(/\bsep\s*=\s*"(?:[^"\\]|\\.)*"/, '').trim();
         const [head] = expression.split('|');
         const [kind, ...rest] = head.trim().split(':');
-        const arity = PLACEHOLDERS[kind];
+        const arity = allowed[kind];
 
         if (arity === undefined) {
             fail(file, `unknown placeholder {${raw}} — it will be emitted verbatim into the artifact`);
@@ -149,11 +155,13 @@ function main() {
 
             // Templates are looked up by canonical keyword. One filed under a synonym is never found,
             // and the block it was written for silently emits nothing.
-            if (!keywords.has(name)) {
+            const running = RUNNING[name];
+
+            if (!running && !keywords.has(name)) {
                 fail(file, `there is no keywords/${name}.md — a template filed under a synonym or a typo is never found`);
             }
 
-            checkTemplate(file, Fs.readFileSync(file, 'utf8'));
+            checkTemplate(file, Fs.readFileSync(file, 'utf8'), running ?? PLACEHOLDERS);
         }
 
         console.log(`emit/${pack.name}: ${templates.length} template(s) checked for target "${manifest.target}".`);

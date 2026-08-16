@@ -19,5 +19,35 @@
         "param": "arg",
         "field": "field",
         "result": "result"
-    }
+    },
+    "builtins": [
+        "string",
+        "number",
+        "boolean",
+        "bigint",
+        "symbol",
+        "object",
+        "void",
+        "any",
+        "unknown",
+        "never",
+        "null",
+        "undefined",
+        "true",
+        "false",
+        "Array",
+        "Promise",
+        "Record",
+        "Partial",
+        "Readonly",
+        "Pick",
+        "Omit",
+        "Map",
+        "Set",
+        "Date",
+        "Error",
+        "RegExp",
+        "JSON",
+        "Math"
+    ]
 }

@@ -1,0 +1,6 @@
+{
+    "id": "emit-se-typescript",
+    "target": "typescript",
+    "match": ["*.ts", "*.tsx", "*.mts", "*.cts"],
+    "comment": "// {text}"
+}

@@ -1,0 +1,6 @@
+{
+    "id": "emit-se-go",
+    "target": "go",
+    "match": ["*.go"],
+    "comment": "// {text}"
+}

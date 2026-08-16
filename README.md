@@ -49,6 +49,24 @@ When a `hint.lock` exists and blocks have drifted, `--prompt` output additionall
 
 > Requires `@openhint/cli` 1.1+. This book no longer ships `--mode fix` / `--mode review`; see the [migration guide](https://github.com/open-hint-dev/hint/blob/main/docs/07-migration.md).
 
+## Emit: producing the code
+
+This hintbook also ships **emit packs** — `emit/typescript/` and `emit/go/` — so `hint emit` can produce the declarations a spec describes, deterministically and without a model:
+
+```bash
+hint emit src/billing/invoice.ts    # write it
+hint emit --check                   # CI: the artifact still matches its spec
+```
+
+| Keyword | TypeScript | Go |
+| --- | --- | --- |
+| `entity` + `field` | `export interface` | `type … struct` |
+| `func` + `arg` + `result` | `export function` with a hole for the body | `func` returning `(T, error)` with a hole |
+
+A type is always optional. `## arg invoice` is a spec a person wrote, and the template — not you — decides how to cope: TypeScript drops the annotation, Go falls back to `any`. Writing `## arg invoice: Invoice` when you know the type simply gives the emitter more to work with.
+
+Everything else has no template and therefore produces no code: `decision`, `invariant`, `rule`, `bad`, `good`, `flow`, `error`, `test`, `lang`, `dep`, `build`. Those are not declarations — they are what the implementation must honour, so they reach the implementer as constraints inside the hole rather than as syntax. A `flow` nested under a `func` becomes that function's step list, right where the body has to be written.
+
 ## Example
 
 ```markdown

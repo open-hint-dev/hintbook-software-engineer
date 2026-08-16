@@ -28,6 +28,11 @@ jobs:
             - name: Check the hintbook manifest parses
               run: node -e "JSON.parse(require('fs').readFileSync('keywords/hintbook.json', 'utf8'))"
 
+            # Emit templates are shipped artifacts: a mistake in one does not fail loudly, it writes
+            # something wrong into a consumer's file. Dependency-free, like everything else here.
+            - name: Check the emit packs
+              run: node scripts/check-emit.mjs
+
             - name: Pack the hintbook
               run: npm pack --dry-run
 
@@ -43,11 +48,11 @@ jobs:
                       exit 1
                   fi
 
-                  for file in package.json index.js keywords/*; do
+                  for file in package.json index.js keywords/* $(ls -d emit/*/* 2>/dev/null); do
                       if ! printf '%s\n' "$packed" | grep -qxF "$file"; then
                           echo "::error::$file is missing from the tarball"
                           exit 1
                       fi
                   done
 
-                  echo "Packed $(printf '%s\n' "$packed" | wc -l) files, including all $(ls keywords | wc -l) keyword files."
+                  echo "Packed $(printf '%s\n' "$packed" | wc -l) files, including all $(ls keywords | wc -l) keyword files and $(ls -d emit/*/* 2>/dev/null | wc -l) emit files."

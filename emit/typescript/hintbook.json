@@ -1,6 +1,12 @@
 {
     "id": "emit-se-typescript",
     "target": "typescript",
-    "match": ["*.ts", "*.tsx", "*.mts", "*.cts"],
-    "comment": "// {text}"
+    "match": [
+        "*.ts",
+        "*.tsx",
+        "*.mts",
+        "*.cts"
+    ],
+    "comment": "// {text}",
+    "symbols": "npx --yes @openhint/adapter-typescript {file}"
 }

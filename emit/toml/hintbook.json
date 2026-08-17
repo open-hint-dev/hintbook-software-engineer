@@ -1,0 +1,9 @@
+{
+    "id": "adapter-se-toml",
+    "target": "toml",
+    "match": [
+        "*.toml"
+    ],
+    "comment": "# {text}",
+    "symbols": "hint:toml"
+}

@@ -1,0 +1,10 @@
+{
+    "id": "adapter-se-yaml",
+    "target": "yaml",
+    "match": [
+        "*.yml",
+        "*.yaml"
+    ],
+    "comment": "# {text}",
+    "symbols": "hint:yaml"
+}

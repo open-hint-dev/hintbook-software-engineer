@@ -1,0 +1,9 @@
+{
+    "id": "adapter-se-ruby",
+    "target": "ruby",
+    "match": [
+        "*.rb"
+    ],
+    "comment": "# {text}",
+    "symbols": "hint:ruby"
+}

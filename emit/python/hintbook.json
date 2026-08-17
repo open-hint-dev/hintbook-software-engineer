@@ -1,0 +1,9 @@
+{
+    "id": "adapter-se-python",
+    "target": "python",
+    "match": [
+        "*.py"
+    ],
+    "comment": "# {text}",
+    "symbols": "hint:python"
+}

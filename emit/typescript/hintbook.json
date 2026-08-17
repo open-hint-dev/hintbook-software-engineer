@@ -8,7 +8,7 @@
         "*.cts"
     ],
     "comment": "// {text}",
-    "symbols": "npx --yes @openhint/adapter-typescript {file}",
+    "symbols": "hint:typescript",
     "extract": {
         "function": "func",
         "interface": "entity",

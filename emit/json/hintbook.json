@@ -1,0 +1,8 @@
+{
+    "id": "adapter-se-json",
+    "target": "json",
+    "match": [
+        "*.json"
+    ],
+    "symbols": "hint:json"
+}

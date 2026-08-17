@@ -1,0 +1,12 @@
+{
+    "id": "adapter-se-javascript",
+    "target": "javascript",
+    "match": [
+        "*.js",
+        "*.jsx",
+        "*.mjs",
+        "*.cjs"
+    ],
+    "comment": "// {text}",
+    "symbols": "hint:javascript"
+}

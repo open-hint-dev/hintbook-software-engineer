@@ -4,6 +4,7 @@
     "match": [
         "*.go"
     ],
+    "symbols": "hint:go",
     "comment": "// {text}",
     "extract": {
         "function": "func",

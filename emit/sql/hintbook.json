@@ -1,0 +1,9 @@
+{
+    "id": "adapter-se-sql",
+    "target": "sql",
+    "match": [
+        "*.sql"
+    ],
+    "comment": "-- {text}",
+    "symbols": "hint:sql"
+}

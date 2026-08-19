@@ -2,12 +2,12 @@
 
 The official general-purpose [hintbook](https://github.com/open-hint-dev/hint/blob/main/docs/05-hintbooks.md) for [HINT](https://github.com/open-hint-dev/hint#readme) — the keyword vocabulary that turns `.hint` specifications into binding implementation prompts for AI coding agents.
 
-A hintbook supplies what the HINT transpiler deliberately leaves open: the meaning of every keyword. This book covers the day-to-day vocabulary of software engineering — data structures, function contracts, logic flows, UI surfaces, dependency policies, prohibitions, and test criteria — and ships three compilation modes: **implement**, **fix**, and **review**.
+A hintbook supplies what the HINT engine deliberately leaves open: the meaning of every keyword. This book covers the day-to-day vocabulary of software engineering — data structures, function contracts, logic flows, UI surfaces, dependency policies, prohibitions, and test criteria.
 
 ## Installation
 
 ```bash
-hint install @openhint/hintbook-software-engineer
+hint add @openhint/hintbook-software-engineer
 ```
 
 This registers the book in your project's `hint.yml`:
@@ -17,7 +17,7 @@ books:
     - npm://@openhint/hintbook-software-engineer
 ```
 
-Then let `hint config | claude -p` add the book's system glossary to your `AGENTS.md` / `CLAUDE.md`, so agents know how to read the compiled tags.
+Then run `hint apply` to add the book's system glossary to your `AGENTS.md` / `CLAUDE.md`, so agents know how to read the compiled tags.
 
 ## Vocabulary at a glance
 

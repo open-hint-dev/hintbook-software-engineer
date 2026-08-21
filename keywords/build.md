@@ -6,6 +6,7 @@ description: |
         # build Pipeline
         `npm run build` compiles, `npm test` runs Vitest. Both must pass before
         the work is considered done.
+synonyms: [builds, build-item]
 ---
 
 <compilation_and_testing_pipeline name="{name}" id="{id}" {attrs} source="{source}">

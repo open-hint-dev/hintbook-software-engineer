@@ -8,6 +8,7 @@ description: |
         Sortable by date, paginated 25 per page.
         ## column amount
         integer cents, right-aligned, formatted as currency
+synonyms: [tables, table-item]
 ---
 
 <table name="{name}" id="{id}" {attrs} source="{source}">

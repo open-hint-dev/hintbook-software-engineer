@@ -8,6 +8,7 @@ description: |
         # action audit-log {#audit_log}
         Whenever money changes hands, append `{ actor, amount, ts }` to the
         audit table.
+synonyms: [actions, action-item]
 ---
 
 <reusable_automation_script name="{name}" id="{id}" {attrs} source="{source}">

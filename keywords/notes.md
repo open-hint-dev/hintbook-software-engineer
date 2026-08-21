@@ -1,12 +1,9 @@
 ---
 description: |
-    Author-facing notes that never reach the compiled prompt — the block and
-    everything nested under it is dropped. Use for reminders, open questions, or
-    TODOs meant for spec authors that the agent must never see.
+    Private scratch content that never appears in compiled output.
     Example:
-        # notes
-        TODO: confirm the retry count with the payments team before finalizing.
+        # notes Follow-up
+        Recheck the source before publication.
+synonyms: [scratch, private-notes]
 exclude: true
-synonyms:
-    - note
 ---

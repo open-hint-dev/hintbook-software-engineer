@@ -6,6 +6,7 @@ description: |
         # ui Invoice page
         A header with the title, an invoices table, and a "New invoice" button.
         No other controls.
+synonyms: [uis, ui-item]
 ---
 
 <user_interface_surface name="{name}" id="{id}" {attrs} source="{source}">

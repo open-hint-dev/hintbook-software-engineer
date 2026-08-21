@@ -6,6 +6,7 @@ description: |
     Example:
         ## row Totals
         Sums each numeric column; non-numeric cells left blank.
+synonyms: [rows, row-item]
 ---
 
 <table_row name="{name}" id="{id}" {attrs} source="{source}">

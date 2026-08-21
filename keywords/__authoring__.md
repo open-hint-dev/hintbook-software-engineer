@@ -1,0 +1,1 @@
+Before editing knowledge under `{paths}`, run `hint author {paths}` and use the profession vocabulary shown there. Record durable rules and evidence, not task progress. After editing, compile the governed path and report every gap.

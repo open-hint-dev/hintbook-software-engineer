@@ -9,6 +9,7 @@ description: |
         ## error
         Throw `InvalidAmountError` when amount <= 0.
         Throw `DuplicateChargeError` when the idempotency key already exists.
+synonyms: [errors, error-item]
 ---
 
 <error name="{name}" id="{id}" {attrs} source="{source}">

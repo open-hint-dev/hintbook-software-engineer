@@ -7,6 +7,7 @@ description: |
     Example:
         ## column status
         enum: draft | sent | paid. Default draft. Label "Status".
+synonyms: [columns, column-item]
 ---
 
 <table_column name="{name}" id="{id}" {attrs} source="{source}">

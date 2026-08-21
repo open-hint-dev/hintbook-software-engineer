@@ -8,6 +8,7 @@ description: |
         # invariant Token verification goes through TokenVerifier {#token_path}
         Every code path that accepts a bearer token calls TokenVerifier.verify.
         No handler parses or trusts a token itself, including in tests.
+synonyms: [invariants, invariant-item]
 ---
 
 <system_invariant name="{name}" id="{id}" {attrs} source="{source}">

@@ -5,6 +5,7 @@ description: |
     Example:
         # image Logo
         src `/assets/logo.svg`, alt "Acme", 120×32, never stretched.
+synonyms: [images, image-item]
 ---
 
 <user_interface_image name="{name}" id="{id}" {attrs} source="{source}">

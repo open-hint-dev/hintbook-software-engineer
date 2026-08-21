@@ -8,6 +8,7 @@ description: |
         # block InvoiceCard
         Shows the customer, amount, and a status badge. No actions inside the
         card.
+synonyms: [blocks, block-item]
 ---
 
 <user_interface_block name="{name}" id="{id}" {attrs} source="{source}">

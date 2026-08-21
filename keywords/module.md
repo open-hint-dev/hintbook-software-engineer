@@ -8,6 +8,7 @@ description: |
         # module auth {#auth}
         Owns session creation and verification. Exports `createSession`,
         `verifyToken`. Never hand-roll token logic elsewhere.
+synonyms: [modules, module-item]
 ---
 
 <reusable_module_context name="{name}" id="{id}" {attrs} source="{source}">

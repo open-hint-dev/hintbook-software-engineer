@@ -8,6 +8,7 @@ description: |
     Example:
         ## field email
         string, required, must match an email pattern
+synonyms: [fields, field-item]
 ---
 
 <field name="{name}" id="{id}" {attrs} source="{source}">

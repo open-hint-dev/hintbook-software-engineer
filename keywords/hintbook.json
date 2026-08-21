@@ -1,4 +1,27 @@
 {
-    "id": "hintbook-software-engineer",
-    "description": "A collection of hints to develop software"
+  "id": "hintbook-software-engineer",
+  "description": "A collection of hints to develop software",
+  "synonyms": [
+    [
+      "source",
+      "evidence",
+      "citation",
+      "provenance"
+    ],
+    [
+      "term",
+      "definition",
+      "glossary"
+    ],
+    [
+      "risk",
+      "hazard",
+      "threat"
+    ],
+    [
+      "decision",
+      "choice",
+      "resolution"
+    ]
+  ]
 }

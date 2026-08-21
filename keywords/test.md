@@ -8,6 +8,7 @@ description: |
         - charges a valid cart once
         - rejects amount <= 0 with InvalidAmountError
         - a second charge with the same key returns the first payment
+synonyms: [tests, test-item]
 ---
 
 <verification_and_unit_test_criteria name="{name}" id="{id}" {attrs} source="{source}">

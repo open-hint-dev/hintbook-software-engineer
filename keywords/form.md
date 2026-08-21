@@ -10,6 +10,7 @@ description: |
         required, email format
         ## field password
         required, min 8 chars
+synonyms: [forms, form-item]
 ---
 
 <user_interface_form name="{name}" id="{id}" {attrs} source="{source}">

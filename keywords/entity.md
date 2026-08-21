@@ -11,6 +11,7 @@ description: |
         The payment contract sent to the gateway.
         ## field amountCents
         integer, required, must be > 0
+synonyms: [entitys, entity-item]
 ---
 
 <data_structure name="{name}" id="{id}" {attrs} source="{source}">

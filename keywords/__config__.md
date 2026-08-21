@@ -1,0 +1,1 @@
+This repository uses HINT Spec-as-Source. Run `hint search "<intent>"` to locate relevant knowledge and `hint <path>` before changing an artifact. The registered profession books share a neutral common core; put the most task-specific book first.

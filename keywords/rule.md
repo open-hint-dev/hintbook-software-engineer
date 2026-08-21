@@ -11,7 +11,7 @@ synonyms:
     - rules
 ---
 
-<critical_system_mandates name="{name}" id="{id}">
+<critical_system_mandates name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

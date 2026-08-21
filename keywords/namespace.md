@@ -8,7 +8,7 @@ description: |
         root, not via relative deep paths.
 ---
 
-<reusable_namespace_context name="{name}" id="{id}">
+<reusable_namespace_context name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

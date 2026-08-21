@@ -8,7 +8,7 @@ description: |
         Sums each numeric column; non-numeric cells left blank.
 ---
 
-<table_row name="{name}" id="{id}">
+<table_row name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

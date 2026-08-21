@@ -10,7 +10,7 @@ description: |
         3. Create the payment and persist the key
 ---
 
-<logic_flow name="{name}" id="{id}">
+<logic_flow name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

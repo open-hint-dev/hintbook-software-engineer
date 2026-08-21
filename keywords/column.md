@@ -9,7 +9,7 @@ description: |
         enum: draft | sent | paid. Default draft. Label "Status".
 ---
 
-<table_column name="{name}" id="{id}">
+<table_column name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

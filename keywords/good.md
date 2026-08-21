@@ -9,7 +9,7 @@ description: |
         boundaries.
 ---
 
-<enforced_patterns name="{name}" id="{id}">
+<enforced_patterns name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

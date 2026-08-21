@@ -8,7 +8,7 @@ description: |
         the work is considered done.
 ---
 
-<compilation_and_testing_pipeline name="{name}" id="{id}">
+<compilation_and_testing_pipeline name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

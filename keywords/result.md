@@ -10,7 +10,7 @@ synonyms:
     - return
 ---
 
-<return name="{name}" id="{id}">
+<return name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

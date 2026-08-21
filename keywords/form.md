@@ -12,7 +12,7 @@ description: |
         required, min 8 chars
 ---
 
-<user_interface_form name="{name}" id="{id}">
+<user_interface_form name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

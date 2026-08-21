@@ -10,7 +10,7 @@ description: |
         No handler parses or trusts a token itself, including in tests.
 ---
 
-<system_invariant name="{name}" id="{id}">
+<system_invariant name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

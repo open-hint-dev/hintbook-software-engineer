@@ -17,7 +17,7 @@ synonyms:
     - variable
 ---
 
-<data_definition name="{name}" id="{id}">
+<data_definition name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

@@ -9,7 +9,7 @@ description: |
         export const handler = (req: Req): Result<Res> => { ... }
 ---
 
-<few_shot_example name="{name}" id="{id}">
+<few_shot_example name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

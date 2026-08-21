@@ -4,6 +4,8 @@ The official general-purpose [hintbook](https://github.com/open-hint-dev/hint/bl
 
 A hintbook supplies what the HINT engine deliberately leaves open: the meaning of every keyword. This book covers the day-to-day vocabulary of software engineering — data structures, function contracts, logic flows, UI surfaces, dependency policies, prohibitions, and test criteria.
 
+Measured performance and retrieval results live in the core [benchmark report](https://github.com/open-hint-dev/hint/blob/main/docs/09-benchmarks.md).
+
 ## Installation
 
 ```bash

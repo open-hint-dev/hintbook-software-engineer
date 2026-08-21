@@ -15,7 +15,7 @@ synonyms:
     - dependencies
 ---
 
-<approved_dependency_whitelist name="{name}" id="{id}">
+<approved_dependency_whitelist name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

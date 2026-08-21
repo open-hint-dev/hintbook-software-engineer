@@ -11,7 +11,7 @@ synonyms:
     - library
 ---
 
-<reusable_library_context name="{name}" id="{id}">
+<reusable_library_context name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

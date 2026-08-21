@@ -10,7 +10,7 @@ description: |
         `verifyToken`. Never hand-roll token logic elsewhere.
 ---
 
-<reusable_module_context name="{name}" id="{id}">
+<reusable_module_context name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

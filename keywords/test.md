@@ -10,7 +10,7 @@ description: |
         - a second charge with the same key returns the first payment
 ---
 
-<verification_and_unit_test_criteria name="{name}" id="{id}">
+<verification_and_unit_test_criteria name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

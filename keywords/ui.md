@@ -8,7 +8,7 @@ description: |
         No other controls.
 ---
 
-<user_interface_surface name="{name}" id="{id}">
+<user_interface_surface name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

@@ -11,7 +11,7 @@ description: |
         Throw `DuplicateChargeError` when the idempotency key already exists.
 ---
 
-<error name="{name}" id="{id}">
+<error name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

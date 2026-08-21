@@ -10,7 +10,7 @@ description: |
         - Do not catch and swallow errors silently.
 ---
 
-<prohibited_anti_patterns name="{name}" id="{id}">
+<prohibited_anti_patterns name="{name}" id="{id}" {attrs} source="{source}">
 
 CRITICAL ASSURANCE: You are strictly prohibited from implementing the following behaviors under any circumstances. These prohibitions exist because of real vulnerabilities and failures in this codebase — do not reintroduce them:
 

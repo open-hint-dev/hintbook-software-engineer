@@ -10,7 +10,7 @@ description: |
         string, required, must match an email pattern
 ---
 
-<field name="{name}" id="{id}">
+<field name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

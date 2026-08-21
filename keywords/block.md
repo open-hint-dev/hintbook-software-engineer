@@ -10,7 +10,7 @@ description: |
         card.
 ---
 
-<user_interface_block name="{name}" id="{id}">
+<user_interface_block name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

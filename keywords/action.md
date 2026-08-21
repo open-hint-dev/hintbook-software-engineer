@@ -10,7 +10,7 @@ description: |
         audit table.
 ---
 
-<reusable_automation_script name="{name}" id="{id}">
+<reusable_automation_script name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

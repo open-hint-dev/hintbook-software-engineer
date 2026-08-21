@@ -13,7 +13,7 @@ synonyms:
     - application
 ---
 
-<application_context name="{name}" id="{id}">
+<application_context name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

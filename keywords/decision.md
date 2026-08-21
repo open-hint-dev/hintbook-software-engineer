@@ -14,7 +14,7 @@ synonyms:
     - adr
 ---
 
-<architectural_decision name="{name}" id="{id}">
+<architectural_decision name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

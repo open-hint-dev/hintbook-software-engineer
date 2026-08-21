@@ -10,7 +10,7 @@ description: |
         integer cents, right-aligned, formatted as currency
 ---
 
-<table name="{name}" id="{id}">
+<table name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

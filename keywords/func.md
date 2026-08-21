@@ -18,7 +18,7 @@ synonyms:
     - function
 ---
 
-<function_contract name="{name}" id="{id}">
+<function_contract name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

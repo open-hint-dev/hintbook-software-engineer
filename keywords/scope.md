@@ -15,7 +15,7 @@ synonyms:
     - outofscope
 ---
 
-<scope_boundary name="{name}" id="{id}">
+<scope_boundary name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

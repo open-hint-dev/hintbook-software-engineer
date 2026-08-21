@@ -14,7 +14,7 @@ synonyms:
     - intent
 ---
 
-<product_goal_and_intent name="{name}" id="{id}">
+<product_goal_and_intent name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

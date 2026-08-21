@@ -10,7 +10,7 @@ description: |
         logging style exactly.
 ---
 
-<read_it name="{name}" id="{id}">
+<read_it name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

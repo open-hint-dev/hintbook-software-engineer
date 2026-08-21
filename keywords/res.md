@@ -12,7 +12,7 @@ synonyms:
     - resources
 ---
 
-<static_asset name="{name}" id="{id}">
+<static_asset name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

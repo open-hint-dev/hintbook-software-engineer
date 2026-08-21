@@ -2,6 +2,8 @@ This prompt uses an HTML-like tag language. Each tag is a typed, binding instruc
 
 ---
 
+A block carrying `origin="agent"` has been recorded but not yet reviewed by a human; weigh it accordingly.
+
 - **file_context** — everything nested applies to the file at `path`: its body, structures, functions, and constraints are that file's complete spec. Don't apply file-local constraints to other files unless restated there.
 - **folder_context** — everything nested applies to the folder at `path` and its whole subtree; every nested file and folder inherits it.
 - **reusable_automation_script** — registers a macro behavior: when its condition is met or it is referenced by name, execute its steps exactly.

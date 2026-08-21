@@ -15,7 +15,7 @@ synonyms:
     - criteria
 ---
 
-<acceptance_criteria name="{name}" id="{id}">
+<acceptance_criteria name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

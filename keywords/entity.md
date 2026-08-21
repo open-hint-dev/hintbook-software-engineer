@@ -13,7 +13,7 @@ description: |
         integer, required, must be > 0
 ---
 
-<data_structure name="{name}" id="{id}">
+<data_structure name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

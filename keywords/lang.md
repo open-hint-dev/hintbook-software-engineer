@@ -11,7 +11,7 @@ synonyms:
     - language
 ---
 
-<environment_runtime_and_language name="{name}" id="{id}">
+<environment_runtime_and_language name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 

@@ -10,7 +10,7 @@ synonyms:
     - argument
 ---
 
-<argument name="{name}" id="{id}">
+<argument name="{name}" id="{id}" {attrs} source="{source}">
 
 {body}
 
